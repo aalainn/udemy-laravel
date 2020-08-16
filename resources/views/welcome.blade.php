@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Hello {{ auth()->user()->name ?? '' }} <!-- name ist der Name des Datenfeldes. Wenn name vorhanden dann diesen ausgeben, ansonsten '' ausgeben. Ist quasi die Kurzschriebeweise für eine if then Abfrage -->
                 </div>
 
                 <div class="links">
