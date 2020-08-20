@@ -8,7 +8,8 @@
                     <div class="card-header">Dashboard</div>
 
                     <div class="card-body">
-                        Here comes some beautiful Dashboardcontent
+                        Here comes some beautiful Dashboardcontent<br>
+                        <div class="btn btn-primary"><i class="fas fa-play-circle pr-3"></i>Play now!</div>
                     </div>
                 </div>
             </div>
