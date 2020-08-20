@@ -34,7 +34,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('projects') ? 'active' : ''}}" href="/projects">Projects</a>
+                            <a class="nav-link {{ Request::is('projects*') ? 'active' : ''}}" href="/projects">Projects</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link {{ Request::is('users') ? 'active' : ''}}" href="/users">Users</a>
