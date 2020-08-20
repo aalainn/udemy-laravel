@@ -17,9 +17,9 @@
                                 <label for="beschreibung">Description</label>
                                 <textarea class="form-control" id="beschreibung" name="beschreibung" rows="5"></textarea>
                             </div>
-                            <input class="btn btn-primary mt-4" type="submit" value="Projekt speichern">
+                            <button class="btn btn-primary mt-4" type="submit"><i class="fas fa-save pr-3"></i>Projekt speichern</button>
                         </form>
-                        <a href="/projects" class="btn btn-outline-primary mt-3"><i class="fas fa-arrow-alt-circle-left pr-3"></i>Back to projectsoverview</a>
+                        <a href="/projects" class="btn btn-outline-primary mt-3"><i class="fas fa-arrow-alt-circle-left pr-3"></i>Back to projects overview</a>
                     </div>
                 </div>
             </div>
