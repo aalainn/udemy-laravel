@@ -8,14 +8,16 @@
                     <div class="card-header">Projects</div>
 
                     <div class="card-body">
-                        <form>
+                        <form action="/projects" method="post">
+                            {{--@csrf = Cross-Site-Request-Forgery, dieses erzeugt ein hidden input field mit einem token--}}
+                            @csrf
                             <div class="form-group">
                                 <label for="name">Projectname</label>
-                                <input type="text" class="form-control" id="name" name="name">
+                                <input type="text" class="form-control" id="name" name="projectname">
                             </div>
                             <div class="form-group">
                                 <label for="beschreibung">Description</label>
-                                <textarea class="form-control" id="beschreibung" name="beschreibung" rows="5"></textarea>
+                                <textarea class="form-control" id="beschreibung" name="description" rows="5"></textarea>
                             </div>
                             <button class="btn btn-primary mt-4" type="submit"><i class="fas fa-save pr-3"></i>Projekt speichern</button>
                         </form>
