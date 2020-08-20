@@ -29,4 +29,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
+/* Resources */
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('projects', 'ProjectsController');
