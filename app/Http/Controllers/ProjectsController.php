@@ -51,7 +51,14 @@ class ProjectsController extends Controller
             ]
         );
         $project->save();
-        return redirect('/projects');
+//        return redirect('/projects');
+
+        //adds the variable $msg_success to view of index
+        return $this->index()->with(
+            [
+          'msg_success' => '<span style="font-weight: bold; text-transform: capitalize;">' . $project['projectname'] . '</span> hinzugefügt'
+            ]
+        );
     }
 
     /**
