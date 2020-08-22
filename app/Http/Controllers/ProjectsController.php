@@ -37,6 +37,7 @@ class ProjectsController extends Controller
     public function store(Request $request)
     {
 //        dd($request);
+        // Validation: If not successfull then the form will be reloaded and an error-object comes back
         $request->validate(
             [
                 'projectname' => 'required|min:3', // field is required and at least 3 chars long
