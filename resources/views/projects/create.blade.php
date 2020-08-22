@@ -10,14 +10,15 @@
                     <div class="card-body">
                         <form action="/projects" method="post">
                             {{--@csrf = Cross-Site-Request-Forgery, dieses erzeugt ein hidden input field mit einem token--}}
+                            {{--Wenn das nicht eingebaut ist erscheint einen 419 Page expried Error--}}
                             @csrf
                             <div class="form-group">
                                 <label for="name">Projectname</label>
-                                <input type="text" class="form-control" id="name" name="projectname">
+                                <input type="text" class="form-control" id="name" name="projectname" value="{{ old('projectname') }}">
                             </div>
                             <div class="form-group">
                                 <label for="beschreibung">Description</label>
-                                <textarea class="form-control" id="beschreibung" name="description" rows="5"></textarea>
+                                <textarea class="form-control" id="beschreibung" name="description" rows="5">{{ old('description') }}</textarea>
                             </div>
                             <button class="btn btn-primary mt-4" type="submit"><i class="fas fa-save pr-3"></i>Projekt speichern</button>
                         </form>
