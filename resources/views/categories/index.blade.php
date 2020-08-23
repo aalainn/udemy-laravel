@@ -11,9 +11,9 @@
                         <ul class="list-group mb-3">
                             @if(count($categories) > 0)
                                 @foreach($categories as $category)
-                                    <li class="list-group-item text-{{ $category->category_style }}">{{ $category->category_name }}
-                                        <a href="categories/{{ $category->id }}"><i class="fa fa-eye pl-2"></i></a>
-                                        <a href="categories/{{ $category->id }}/edit"><i class="fa fa-edit pl-2"></i></a>
+                                    <li class="list-group-item"><span class="badge badge-{{ $category->category_style }}">{{ $category->category_name }}</span>
+                                        <a href="/categories/{{ $category->id }}"><i class="fa fa-eye pl-2"></i></a>
+                                        <a href="/categories/{{ $category->id }}/edit"><i class="fa fa-edit pl-2"></i></a>
                                         <form id="delete-form" style="display: inline;" action="/categories/{{ $category->id }}" method="post">
                                             @csrf
                                             @method('DELETE')
@@ -25,7 +25,7 @@
                                 <p>No categories available</p>
                             @endif
                         </ul>
-                        <a href="categories/create" class="btn btn-primary"><i class="fas fa-plus-circle pr-3"></i>Add category</a>
+                        <a href="/categories/create" class="btn btn-primary"><i class="fas fa-plus-circle pr-3"></i>Add category</a>
                     </div>
                 </div>
             </div>

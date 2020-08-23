@@ -107,7 +107,7 @@ class CategoriesController extends Controller
         );
 
         return redirect('/categories')->with(
-            'msg_success' , '<span style="font-weight: bold; text-transform: capitalize;">' . $category['category_name'] . '</span> added'
+            'msg_success' , '<span style="font-weight: bold; text-transform: capitalize;">' . $category['category_name'] . '</span> edited'
         );
     }
 
