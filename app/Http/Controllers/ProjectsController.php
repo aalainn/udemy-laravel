@@ -53,11 +53,16 @@ class ProjectsController extends Controller
         $project->save();
 //        return redirect('/projects');
 
-        //adds the variable $msg_success to view of index
-        return $this->index()->with(
-            [
-          'msg_success' => '<span style="font-weight: bold; text-transform: capitalize;">' . $project['projectname'] . '</span> hinzugefügt'
-            ]
+        //option 1: adds the variable $msg_success to view of index
+//        return $this->index()->with(
+//            [
+//          'msg_success' => '<span style="font-weight: bold; text-transform: capitalize;">' . $project['projectname'] . '</span> hinzugefügt'
+//            ]
+//        );
+
+        //option 2: adds the variable $msg_success to view of index
+        return redirect('/projects')->with(
+            'msg_success' , '<span style="font-weight: bold; text-transform: capitalize;">' . $project['projectname'] . '</span> hinzugefügt'
         );
     }
 
@@ -88,7 +93,7 @@ class ProjectsController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\projects  $projects
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update(Request $request, projects $project)
     {
@@ -109,11 +114,16 @@ class ProjectsController extends Controller
             ]
         );
 
-        //"with" adds the variable $msg_success to view of index
-        return $this->index()->with(
-            [
-                'msg_success' => '<span style="font-weight: bold; text-transform: capitalize;">' . $request->projectname . '</span> angepasst'
-            ]
+        //option 1: "with" adds the variable $msg_success to view of index
+//        return $this->index()->with(
+//            [
+//                'msg_success' => '<span style="font-weight: bold; text-transform: capitalize;">' . $request->projectname . '</span> angepasst'
+//            ]
+//        );
+
+        //option 2: "with" adds the variable $msg_success to view of index
+        return redirect('/projects')->with(
+                'msg_success' , '<span style="font-weight: bold; text-transform: capitalize;">' . $request->projectname . '</span> angepasst'
         );
     }
 
