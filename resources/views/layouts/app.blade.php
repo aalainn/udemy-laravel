@@ -37,6 +37,9 @@
                             <a class="nav-link {{ Request::is('projects*') ? 'active' : ''}}" href="/projects">Projects</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link {{ Request::is('categories*') ? 'active' : ''}}" href="/categories">Categories</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link {{ Request::is('users') ? 'active' : ''}}" href="/users">Users</a>
                         </li>
                     </ul>
@@ -89,24 +92,26 @@
 
             @if(session('msg_success'))
                 <div class="container">
-                    <div class="alert alert-success">
+                    <div class="alert alert-success alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
                         {!! session('msg_success') !!}
                     </div>
                 </div>
             @endif
 
-            @if($errors->any())
-                <div class="container">
-                    <div class="alert alert-danger">
-                        Eingabefehler aufgetreten:
-                        <ul class="mb-0">
-                            @foreach($errors->all() as $error)
-                                <li>{!! $error !!}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                </div>
-            @endif
+{{--            @if($errors->any())--}}
+{{--                <div class="container">--}}
+{{--                    <div class="alert alert-danger">--}}
+{{--                        Eingabefehler aufgetreten:--}}
+{{--                        <ul class="mb-0">--}}
+{{--                            @foreach($errors->all() as $error)--}}
+{{--                                <li>{!! $error !!}</li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            @endif--}}
+
             @yield('content')
         </main>
     </div>

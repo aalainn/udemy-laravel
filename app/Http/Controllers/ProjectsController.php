@@ -138,7 +138,7 @@ class ProjectsController extends Controller
         $deleted_project = $project->projectname;
         $project->delete();
         return redirect('/projects')->with(
-            'msg_success' , '<i class="fa fa-check-circle"></i><span class="pl-2" style="font-weight: bold; text-transform: capitalize;">' . $deleted_project . '</span> gelöscht'
+            'msg_success' , '<i class="fa fa-check-circle"></i><span class="pl-2" style="font-weight: bold; text-transform: capitalize;">' . $deleted_project . '</span> deleted'
         );
     }
 }

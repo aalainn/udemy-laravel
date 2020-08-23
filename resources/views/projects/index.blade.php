@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Projects</div>
 
@@ -22,10 +22,10 @@
                                     </li>
                                 @endforeach
                             @else
-                                <p>Keine Projekte vorhanden</p>
+                                <p>No projects available</p>
                             @endif
                         </ul>
-                        <a href="projects/create" class="btn btn-primary"><i class="fas fa-plus-circle pr-3"></i>Add Project</a>
+                        <a href="projects/create" class="btn btn-primary"><i class="fas fa-plus-circle pr-3"></i>Add project</a>
                     </div>
                 </div>
             </div>

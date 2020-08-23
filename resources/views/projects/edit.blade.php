@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Edit Project</div>
 
@@ -24,7 +24,7 @@
                                 <textarea class="form-control {{ $errors->has('description') ? 'border-danger' : '' }}" id="beschreibung" name="description" rows="5">{{ old('description') ?? $project->description }}</textarea>
                                 <small class="form-text text-danger">{!! $errors->first('description') !!}</small>
                             </div>
-                            <button class="btn btn-primary mt-4" type="submit"><i class="fas fa-save pr-3"></i>Anpassungen speichern</button>
+                            <button class="btn btn-primary mt-4" type="submit"><i class="fas fa-save pr-3"></i>Save changes</button>
                         </form>
                         <a href="/projects" class="btn btn-outline-primary mt-3"><i class="fas fa-arrow-alt-circle-left pr-3"></i>Back to projects overview</a>
                     </div>
