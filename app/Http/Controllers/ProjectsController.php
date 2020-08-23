@@ -67,9 +67,9 @@ class ProjectsController extends Controller
      * @param  \App\projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function show(projects $projects)
+    public function show(projects $project)
     {
-        //
+        return view('projects.show')->with('project', $project);
     }
 
     /**
