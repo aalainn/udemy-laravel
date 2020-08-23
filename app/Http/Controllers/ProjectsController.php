@@ -78,9 +78,9 @@ class ProjectsController extends Controller
      * @param  \App\projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function edit(projects $projects)
+    public function edit(projects $project)
     {
-        //
+        return view('projects.edit')->with('project', $project);
     }
 
     /**
@@ -90,9 +90,31 @@ class ProjectsController extends Controller
      * @param  \App\projects  $projects
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, projects $projects)
+    public function update(Request $request, projects $project)
     {
-        //
+        // Validation: If an error occurs, then the variabel $error is sendet to the view
+        $request->validate(
+            [
+                'projectname' => 'required|min:3', // field is required and at least 3 chars long
+                'description' => 'required|min:5'
+            ]
+        );
+
+//        dd($request);
+
+        $project->update(
+            [
+                'projectname' => $request->projectname,
+                'description' => $request->description
+            ]
+        );
+
+        //"with" adds the variable $msg_success to view of index
+        return $this->index()->with(
+            [
+                'msg_success' => '<span style="font-weight: bold; text-transform: capitalize;">' . $request->projectname . '</span> angepasst'
+            ]
+        );
     }
 
     /**
