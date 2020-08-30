@@ -14,7 +14,9 @@ class UserIdInProjectsTable extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->nullable()->after('id');
+            $table->foreign('user_id') // Defines it as a foreign key
+                ->references('id')->on('users'); //
         });
     }
 
@@ -26,7 +28,8 @@ class UserIdInProjectsTable extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            //
+            $table->dropForeign('user_id');
+            $table->dropColumn('user_id');
         });
     }
 }
