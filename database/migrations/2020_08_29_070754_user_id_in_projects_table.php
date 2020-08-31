@@ -28,7 +28,7 @@ class UserIdInProjectsTable extends Migration
     public function down()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->dropForeign('user_id');
+            $table->dropForeign('projects_user_id_foreign');
             $table->dropColumn('user_id');
         });
     }
